@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TwigPaymentGateway
+ *
+ * @description Twig Payment Gateway
+ * @author   Twig Team <twigpay@twig-group.com>
+ * @license  MIT
+ * @copyright Copyright © 2022 https://twigcard.com/
+ *
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_assign_data">
+        <observer name="twig_payment_gateway_data_assign"
+                  instance="Twigpay\TwigPaymentGateway\Observer\DataAssignObserver"/>
+    </event>
+
+    <event name="sales_order_creditmemo_save_after">
+        <observer name="sales_order_creditmemo_save_after"
+                  instance="\Twigpay\TwigPaymentGateway\Observer\CreditMemoUpdate"/>
+    </event>
+
+    <event name="sales_order_invoice_save_after">
+        <observer name="twig_payment_gateway_invoice_status"
+                  instance="Twigpay\TwigPaymentGateway\Observer\InvoiceStatusObserver"/>
+    </event>
+
+</config>

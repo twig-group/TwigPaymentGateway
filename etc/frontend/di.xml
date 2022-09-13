@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TwigPaymentGateway
+ *
+ * @description Twig Payment Gateway
+ * @author   Twig Team <twigpay@twig-group.com>
+ * @license  MIT
+ * @copyright Copyright © 2022 https://twigcard.com/
+ *
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="twig_gateway_config_provider" xsi:type="object">Twigpay\TwigPaymentGateway\Model\Ui\ConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Twigpay\TwigPaymentGateway\Block\Info">
+        <arguments>
+            <argument name="data" xsi:type="array">
+                <item xsi:type="string" name="is_secure_mode">1</item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Twigpay\TwigPaymentGateway\Model\Api\ConfigInterface" type="Twigpay\TwigPaymentGateway\Model\Api\Config"/>
+</config>

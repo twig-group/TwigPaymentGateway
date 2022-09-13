@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * TwigPaymentGateway
+ *
+ * @description Twig Payment Gateway
+ * @author   Twig Team <twigpay@twig-group.com>
+ * @license  MIT
+ * @copyright Copyright © 2022 https://twigcard.com/
+ *
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <twig_gateway>
+                <debug>1</debug>
+                <active>0</active>
+                <model>TwigPaymentGatewayFacade</model>
+                <merchant_gateway_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <order_status>pending_payment</order_status>
+                <payment_action>authorize</payment_action>
+                <title>Pay £0 using your things</title>
+                <currency>USD</currency>
+                <can_authorize>1</can_authorize>
+                <can_capture>1</can_capture>
+                <can_void>1</can_void>
+                <can_refund>1</can_refund>
+                <can_use_checkout>1</can_use_checkout>
+                <is_gateway>1</is_gateway>
+                <sort_order>1</sort_order>
+                <twig-api-version>2022-01-01</twig-api-version>
+                <debugReplaceKeys>MERCHANT_KEY</debugReplaceKeys>
+                <paymentInfoKeys>FRAUD_MSG_LIST</paymentInfoKeys>
+                <privateInfoKeys>FRAUD_MSG_LIST</privateInfoKeys>
+            </twig_gateway>
+        </payment>
+    </default>
+</config>

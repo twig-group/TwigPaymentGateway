@@ -2,7 +2,7 @@ Twig Payment Gateway
 This extension allows you to use Twig as a payment gateway in your Magento 2 store.
 
 Installation using Composer (Recommended)
-composer require twigpay/twigpaymentgateway
+composer require twigpay/twigpaymentgateway 
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
 php bin/magento setup:static-content:deploy
@@ -26,8 +26,3 @@ Navigate to Store -> Configuration -> Sales -> Payment Methonds -> TWIG Gateway 
 Please change the Enable filed to YES and fill Merchant Api Key,Twig Client ID provided by Twig Dashboard.
 
 After you save the configuration the module will be enabled in your Magento 2 Store.
-
-
-For testing purposes you can use the following keys:
-Mechat Api Key >  live_4F5ABA4745DED27AAECCE80CDF30450FAE532773F5D8AEA1BB822B4B13354FEE
-Twig Client ID  >    25e31df8-33f6-429c-adcd-e24c1cd8cea4

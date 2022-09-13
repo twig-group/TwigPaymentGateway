@@ -50,7 +50,7 @@ class TwigPay extends AbstractMethod
     public function getTwigRedirectUrl($quote): ?string
     {
         $reference = uniqid()."-".$quote->getReservedOrderId();
-        $url = 'https://api.test.twigpayment.com/v1/operations/order/init';
+        $url = 'https://api.twigpayment.com/v1/operations/order/init';
         $requestBody = $this->payloadBuilder->buildTwigCheckoutPayload($quote, $reference);
         $requestBody = json_encode($requestBody, JSON_UNESCAPED_SLASHES);
         try {

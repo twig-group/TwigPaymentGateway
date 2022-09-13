@@ -76,7 +76,7 @@ class CaptureRequest implements BuilderInterface
         $x_api_key = $this->config->getValue('x-api-key', $order->getStoreId());
         $twig_client_id =$this->config->getValue('twig_client_id', $order->getStoreId());
         $twig_api_version =$this->config->getValue('twig-api-version', $order->getStoreId());
-        $twig_uri = 'https://api.test.twigpayment.com/v1/payment/order/capture';
+        $twig_uri = 'https://api.twigpayment.com/v1/payment/order/capture';
 
 
         if ($captureAmount > $finalAmount) {

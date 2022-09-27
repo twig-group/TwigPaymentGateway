@@ -48,7 +48,7 @@ class RefundHandler implements HandlerInterface
      */
     protected function generateTxnId(): string
     {
-        return md5(mt_rand(0, 1000));
+        return hash('sha256', random_int(0, 1000));
     }
 
 }

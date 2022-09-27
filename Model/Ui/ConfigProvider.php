@@ -18,7 +18,7 @@ use Magento\Framework\View\Asset\Repository;
 /**
  * Class ConfigProvider
  */
-final class ConfigProvider implements ConfigProviderInterface
+class ConfigProvider implements ConfigProviderInterface
 {
     /**
      * @var Repository

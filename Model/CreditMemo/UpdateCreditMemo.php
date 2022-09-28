@@ -8,7 +8,7 @@
  * @copyright Copyright © 2022 https://twigcard.com/
  *
  */
-namespace MageTwigpaynto\TwigPaymentGateway\Model\CreditMemo;
+namespace Twigpay\TwigPaymentGateway\Model\CreditMemo;
 
 use Exception;
 use Magento\Sales\Api\CreditmemoRepositoryInterface;

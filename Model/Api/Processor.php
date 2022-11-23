@@ -67,9 +67,9 @@ class Processor
     {
         try {
 
-            $x_api_key_path = 'payment/twig_gateway/x-api-key';
+            $x_api_key_path = 'payment/twig_gateway/x_api_key';
             $twig_client_id_path = 'payment/twig_gateway/twig_client_id';
-            $twig_api_version_path = 'payment/twig_gateway/twig-api-version';
+            $twig_api_version_path = 'payment/twig_gateway/twig_api_version';
 
             $x_api_key=  $this->scopeConfig->getValue($x_api_key_path, ScopeInterface::SCOPE_STORE);
             $twig_client_id=  $this->scopeConfig->getValue($twig_client_id_path, ScopeInterface::SCOPE_STORE);

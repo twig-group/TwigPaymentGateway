@@ -40,7 +40,7 @@
                 </field>
 
                 <!--                Merchant Twig Data     -->
-                <field id="x-api-key" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
+                <field id="x_api_key" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1"
                        showInStore="0">
                     <label>Merchant Api Key</label>
                     <comment>Look for this in your Twig Dashboard</comment>
@@ -54,7 +54,7 @@
                     <validate>required-entry</validate>
                 </field>
 
-                <field id="twig-api-version" translate="label" type="text" sortOrder="60" showInDefault="1"
+                <field id="twig_api_version" translate="label" type="text" sortOrder="60" showInDefault="1"
                        showInWebsite="1" showInStore="0">
                     <label>Twig Api Version</label>
                     <comment>Look for this in your Twig Dashboard</comment>

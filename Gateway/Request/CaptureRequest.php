@@ -73,9 +73,9 @@ class CaptureRequest implements BuilderInterface
         $dateCreated = date('Y-m-d\TH:i:s.u');
         $finalAmount = $quote->getGrandTotal();
 
-        $x_api_key = $this->config->getValue('x-api-key', $order->getStoreId());
+        $x_api_key = $this->config->getValue('x_api_key', $order->getStoreId());
         $twig_client_id =$this->config->getValue('twig_client_id', $order->getStoreId());
-        $twig_api_version =$this->config->getValue('twig-api-version', $order->getStoreId());
+        $twig_api_version =$this->config->getValue('twig_api_version', $order->getStoreId());
         $twig_uri = 'https://api.twigpayment.com/v1/payment/order/capture';
 
 

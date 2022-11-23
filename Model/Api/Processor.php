@@ -66,7 +66,7 @@ class Processor
     public function call($url, $body = false, $method = Zend_Http_Client::GET): string
     {
         try {
-
+            //Get values from config
             $x_api_key_path = 'payment/twig_gateway/x_api_key';
             $twig_client_id_path = 'payment/twig_gateway/twig_client_id';
             $twig_api_version_path = 'payment/twig_gateway/twig_api_version';

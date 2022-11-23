@@ -8,9 +8,9 @@
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
     <table name="sales_order" resource="default" engine="innodb">
-        <column xsi:type="varchar" name="twig_order_id" length="100" identity="true" nullable="false"
+        <column xsi:type="varchar" name="twig_order_id" identity="true" nullable="false"
                 comment="Twig Order Id"/>
-        <column xsi:type="boolean" name="invoice_exists" identity="false" nullable="true"
+        <column xsi:type="boolean" name="invoice_exists" nullable="true"
                 comment="Check if invoice already exists"/>
     </table>
 </schema>

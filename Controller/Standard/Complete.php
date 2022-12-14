@@ -142,14 +142,21 @@ class Complete extends Action
         $this->_checkoutSession->setLastQuoteId($quoteId);
 
         if ($order) {
+            // send email
+            try {
+                $this->_orderSender->send($order);
+            } catch (\Exception $e) {
+               $this->_helper->debug("Transaction Email Sending Error: " . json_encode($e));
+            };
+            
             $orderId = $this->getRequest()->getParam("id");
             $quoteId = $this->getRequest()->getParam("quote_id");
 
             $this->_checkoutSession->setLastSuccessQuoteId($quoteId);
             $this->_checkoutSession->setLastQuoteId($quoteId);
-            $this->_checkoutSession->setLastOrderId($order->getEntityId());
-            $this->_checkoutSession->setLastRealOrderId($orderId);
-            $this->_checkoutSession->clearHelperData();
+            $this->_checkoutSession->setLastOrderId($order->getId())
+                                       ->setLastRealOrderId($order->getIncrementId())
+                                       ->setLastOrderStatus($order->getStatus());
 
             $this->getResponse()->setRedirect(
                 $this->_url->getUrl('checkout/onepage/success')

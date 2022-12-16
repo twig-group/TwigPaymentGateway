@@ -24,7 +24,11 @@ class State extends \Magento\Sales\Model\ResourceModel\Order\Handler\State
      */
     public function check(Order $order)
     {
-        $currentState = $order->getState();
+        $payment = $order->getPayment();
+        $method = $payment->getMethod();
+        
+        if ($method == "twig_gateway") {
+            $currentState = $order->getState();
         if ($currentState == Order::STATE_NEW && $order->getIsInProcess()) {
             $order->setState(Order::STATE_PROCESSING)
                 ->setStatus($order->getConfig()->getStateDefaultStatus(Order::STATE_PROCESSING));
@@ -45,5 +49,6 @@ class State extends \Magento\Sales\Model\ResourceModel\Order\Handler\State
             }
         }
         return $this;
+        }
     }
 }
